@@ -54,26 +54,4 @@ resource "aws_route_table_association" "public-rt" {
   route_table_id = "${aws_route_table.public-rt.id}"
 }
 
-resource "aws_elb" "web" {
-  name = "elb-vote"
 
-
-  subnets = ["${element(aws_subnet.pub-Subnet.*.id, count.index)}"]
-
-  security_groups = ["${aws_security_group.elb.id}"]
-
-  listener {
-    instance_port     = 80
-    instance_protocol = "http"
-    lb_port           = 80
-    lb_protocol       = "http"
-  }
-  listener {
-    instance_port     = 443
-    instance_protocol = "https"
-    lb_port           = 443
-    lb_protocol       = "https"
-  }
-
-
-}

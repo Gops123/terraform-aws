@@ -24,6 +24,6 @@ variable "priazs" {
 }
 
 variable "sub-id"{
-  default = "subnet-075dbaec2e65c4a5d"
+  default = "subnet-064cd2b22dae8f203"
 }
 
